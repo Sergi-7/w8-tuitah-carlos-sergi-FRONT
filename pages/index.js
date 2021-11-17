@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styles from "./index.module.css";
 
 const Home = () => (
