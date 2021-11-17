@@ -1,3 +1,4 @@
-const createtweets = () => <h2>Adeu</h2>;
+import Form from "../../components/Form/Form";
 
+const createtweets = () => <Form></Form>;
 export default createtweets;
