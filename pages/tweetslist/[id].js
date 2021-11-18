@@ -1,8 +1,8 @@
-import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
+import ReactTimeAgo from "react-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 
-TimeAgo.addLocale(en);
+TimeAgo.locale(en);
 
 const SSG = ({ tweet }) => (
   <>
