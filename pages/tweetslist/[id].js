@@ -1,9 +1,17 @@
-const SSG = ({ tweet }) => (
-  <>
-    <h2>{tweet.text}</h2>
-    <p>{tweet.likes}</p>
-  </>
-);
+import { useRouter } from "next/router";
+
+const SSG = ({ tweet }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+  return (
+    <>
+      <h2>{tweet.text}</h2>
+      <p>{tweet.likes}</p>
+    </>
+  );
+};
 
 export const getStaticPaths = async () => {
   const response = await fetch(
@@ -27,6 +35,7 @@ export const getStaticProps = async ({ params }) => {
   const tweet = await response.json();
   return {
     props: { tweet },
+    revalidate: 10,
   };
 };
 
