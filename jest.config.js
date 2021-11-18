@@ -3,6 +3,13 @@ module.exports = {
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
     "!**/node_modules/**",
+    "!**/.next/**",
+    "!**/*config*.js",
+    "!**/coverage/lcov-report**",
+    "!**/block-navigation**.js",
+    "!**/prettify**.js",
+    "!**/sorter**.js",
+    "!**/coverage/**.js",
   ],
   moduleNameMapper: {
     // Handle CSS imports (with CSS modules)
