@@ -30,14 +30,18 @@ const Form = () => {
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
-      <label htmlFor="text">Text : </label>
-      <textarea
-        type="text"
-        maxLength="200 "
-        id="text"
-        onChange={handleOnChange}
-      ></textarea>
-      <button>Submit</button>
+      <div className="form-group">
+        <label htmlFor="text">Text :</label>
+        <textarea
+          type="text"
+          maxLength="200 "
+          id="text"
+          onChange={handleOnChange}
+          className="form-control"
+          rows="7"
+        ></textarea>
+        <button className="btn btn-primary">Submit</button>
+      </div>
     </form>
   );
 };

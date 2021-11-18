@@ -7,8 +7,10 @@ const SSG = ({ tweet }) => {
   }
   return (
     <>
-      <h2>{tweet.text}</h2>
-      <p>{tweet.likes}</p>
+      <div className="card">
+        <div className="card-body">{tweet.text}</div>
+        <div className="card-footer">Likes - {tweet.likes}</div>
+      </div>
     </>
   );
 };
