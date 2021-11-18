@@ -38,7 +38,7 @@ const tweetslist = ({ tweetsList }) => {
             ></ReactTimeAgo>
             <button onClick={() => deleteTweet(tweet.id)}>Delete</button>
             <button onClick={() => likeTweet(tweet)}>Like</button>
-            <Link href={`tweets/${tweet.id}`}>Ver más</Link>
+            <Link href={`tweetslist/${tweet.id}`}>Ver más</Link>
           </li>
         ))}
       </ul>

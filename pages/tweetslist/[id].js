@@ -1,24 +1,27 @@
-const { default: ReactTimeAgo } = require("react-time-ago");
+import ReactTimeAgo from "react-time-ago";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+
+TimeAgo.addDefaultLocale(en);
 
 const SSG = ({ tweet }) => (
   <>
     <h2>{tweet.text}</h2>
     <p>{tweet.likes}</p>
     <div>
-      <ReactTimeAgo date={tweet.date} locale="en-US"></ReactTimeAgo>
+      <ReactTimeAgo date={Date.parse(tweet.date)} locale="en-US"></ReactTimeAgo>
     </div>
   </>
 );
-
-export default SSG;
 
 export const getStaticPaths = async () => {
   const response = await fetch(
     "https://tuitah-carlos-sergi.herokuapp.com/tweets"
   );
   const tweets = await response.json();
+
   const paths = tweets.map((tweet) => ({
-    params: { id: tweet.id },
+    params: { id: tweet.id.toString() },
   }));
   return {
     paths,
@@ -35,3 +38,5 @@ export const getStaticProps = async ({ params }) => {
     props: { tweet },
   };
 };
+
+export default SSG;
