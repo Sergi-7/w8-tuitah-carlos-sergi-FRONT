@@ -1,6 +1,6 @@
 const tweetslist = ({ tweetsList }) => (
   <>
-    <h2>Hola</h2>
+    <h2>Listado de tweets</h2>
     <ul>
       {tweetsList.map((tweet) => (
         <li key={tweet.id}>
