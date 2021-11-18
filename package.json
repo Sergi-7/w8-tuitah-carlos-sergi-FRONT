@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "prepare": "husky install"
   },
   "dependencies": {
     "msw": "^0.35.0",
@@ -24,9 +25,14 @@
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-testing-library": "4.11.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.0.6",
+    "lint-staged": "^12.0.2",
     "react-test-renderer": "17.0.2",
     "whatwg-fetch": "^3.6.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
